@@ -10,4 +10,11 @@ public class ClientDaoMock implements IClientDAO {
         // TODO
     }
 
+    @Override
+    public Client searchByCPF(Long cpf) {
+        Client client = new Client();
+        client.setCpf(cpf);
+        return client;
+    }
+
 }

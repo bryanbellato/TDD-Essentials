@@ -19,7 +19,7 @@ public class ClientService implements IClientService {
     @Override
     public Client searchByCPF(Long cpf) {
         // TODO
-        return null;
+        return clientDAO.searchByCPF(cpf);
     }
 
 }

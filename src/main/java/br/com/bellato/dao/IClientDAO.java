@@ -6,4 +6,6 @@ public interface IClientDAO {
 
     void save(Client client);
 
+    Client searchByCPF(Long cpf);
+
 }

@@ -8,4 +8,9 @@ public class ClientDAO implements IClientDAO {
     public void save(Client client) {
         // TODO
     }
+
+    @Override
+    public Client searchByCPF(Long cpf) {
+        return null;
+    }
 }
