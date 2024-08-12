@@ -1,6 +1,7 @@
 package test.java.br.com.bellato;
 
 import main.java.br.com.bellato.domain.Client;
+import main.java.br.com.bellato.services.ClientService;
 import main.java.br.com.bellato.services.IClientService;
 import org.junit.Test;
 import org.junit.Assert;
@@ -8,6 +9,10 @@ import org.junit.Assert;
 public class ClientTest {
 
     private IClientService clientService;
+
+    public ClientTest() {
+        clientService = new ClientService;
+    }
 
     @Test
     public void searchClient() {
