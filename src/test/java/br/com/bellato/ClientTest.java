@@ -1,17 +1,20 @@
 package test.java.br.com.bellato;
 
+import main.java.br.com.bellato.dao.IClientDAO;
 import main.java.br.com.bellato.domain.Client;
 import main.java.br.com.bellato.services.ClientService;
 import main.java.br.com.bellato.services.IClientService;
 import org.junit.Test;
 import org.junit.Assert;
+import test.java.br.com.bellato.dao.ClientDaoMock;
 
 public class ClientTest {
 
     private IClientService clientService;
 
     public ClientTest() {
-        clientService = new ClientService;
+        IClientDAO dao = new ClientDaoMock();
+        clientService = new ClientService(dao);
     }
 
     @Test
