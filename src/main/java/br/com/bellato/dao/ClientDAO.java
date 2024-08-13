@@ -5,8 +5,9 @@ import main.java.br.com.bellato.domain.Client;
 public class ClientDAO implements IClientDAO {
 
     @Override
-    public void save(Client client) {
+    public Boolean save(Client client) {
         // TODO
+        return true;
     }
 
     @Override

@@ -28,14 +28,16 @@ public class ClientServiceTest {
         client.setCity("Black Hole");
         client.setState("Somewhere in your nearest galaxy.");
         client.setPhone(40028922L);
-
-        clientService.save(client);
     }
 
     @Test
     public void searchClient() {
         Client clientSearched = clientService.searchByCPF(client.getCpf());
         Assert.assertNotNull(clientSearched);
+    }
+
+    public void saveClient() {
+        clientService.save(client);
     }
 
 }

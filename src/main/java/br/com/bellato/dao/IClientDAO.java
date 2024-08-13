@@ -4,7 +4,7 @@ import main.java.br.com.bellato.domain.Client;
 
 public interface IClientDAO {
 
-    void save(Client client);
+    Boolean save(Client client);
 
     Client searchByCPF(Long cpf);
 
