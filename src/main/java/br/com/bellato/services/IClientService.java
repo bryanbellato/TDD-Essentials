@@ -10,4 +10,5 @@ public interface IClientService {
 
     void remove(Long cpf);
 
+    void update(Client client);
 }

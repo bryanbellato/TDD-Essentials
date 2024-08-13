@@ -26,4 +26,9 @@ public class ClientService implements IClientService {
         // TODO
     }
 
+    @Override
+    public void update(Client client) {
+        // TODO
+    }
+
 }
