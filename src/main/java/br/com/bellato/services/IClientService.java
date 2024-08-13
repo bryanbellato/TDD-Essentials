@@ -8,4 +8,6 @@ public interface IClientService {
 
     Client searchByCPF(Long cpf);
 
+    void remove(Long cpf);
+
 }

@@ -14,4 +14,10 @@ public class ClientDAO implements IClientDAO {
     public Client searchByCPF(Long cpf) {
         return null;
     }
+
+    @Override
+    public void remove(Long cpf) {
+        // TODO
+    }
+
 }

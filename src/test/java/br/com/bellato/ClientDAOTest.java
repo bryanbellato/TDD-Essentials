@@ -36,4 +36,15 @@ public class ClientDAOTest {
         Assert.assertNotNull(clientSearched);
     }
 
+    @Test
+    public void saveClient() {
+        Boolean save_return = clientDAO.save(client);
+        Assert.assertTrue(save_return);
+    }
+
+    @Test
+    public void removeClient() {
+        clientDAO.remove(client.getCpf());
+    }
+
 }

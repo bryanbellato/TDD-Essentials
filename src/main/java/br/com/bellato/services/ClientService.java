@@ -21,4 +21,9 @@ public class ClientService implements IClientService {
         return clientDAO.searchByCPF(cpf);
     }
 
+    @Override
+    public void remove(Long cpf) {
+        // TODO
+    }
+
 }

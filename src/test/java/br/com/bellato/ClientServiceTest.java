@@ -36,8 +36,15 @@ public class ClientServiceTest {
         Assert.assertNotNull(clientSearched);
     }
 
+    @Test
     public void saveClient() {
-        clientService.save(client);
+        Boolean save_return = clientService.save(client);
+        Assert.assertTrue(save_return);
+    }
+
+    @Test
+    public void removeClient() {
+        clientService.remove(client.getCpf());
     }
 
 }

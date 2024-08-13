@@ -8,4 +8,5 @@ public interface IClientDAO {
 
     Client searchByCPF(Long cpf);
 
+    void remove(Long cpf);
 }

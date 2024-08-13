@@ -18,4 +18,9 @@ public class ClientDAOMock implements IClientDAO {
         return client;
     }
 
+    @Override
+    public void remove(Long cpf) {
+        // TODO
+    }
+
 }
