@@ -2,21 +2,19 @@ package test.java.br.com.bellato;
 
 import main.java.br.com.bellato.dao.IClientDAO;
 import main.java.br.com.bellato.domain.Client;
-import main.java.br.com.bellato.services.ClientService;
-import main.java.br.com.bellato.services.IClientService;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
 import test.java.br.com.bellato.dao.ClientDAOMock;
 
-public class ClientServiceTest {
 
-    private IClientService clientService;
+public class ClientDAOTest {
+
+    private IClientDAO clientDAO;
     private Client client;
 
-    public ClientServiceTest() {
-        IClientDAO dao = new ClientDAOMock();
-        clientService = new ClientService(dao);
+    public ClientDAOTest() {
+        clientDAO = new ClientDAOMock();
     }
 
     @Before
@@ -29,12 +27,12 @@ public class ClientServiceTest {
         client.setState("Somewhere in your nearest galaxy.");
         client.setPhone(40028922L);
 
-        clientService.save(client);
+        clientDAO.save(client);
     }
 
     @Test
     public void searchClient() {
-        Client clientSearched = clientService.searchByCPF(client.getCpf());
+        Client clientSearched = clientDAO.searchByCPF(client.getCpf());
         Assert.assertNotNull(clientSearched);
     }
 
