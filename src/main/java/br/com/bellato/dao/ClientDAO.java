@@ -1,23 +1,23 @@
 package main.java.br.com.bellato.dao;
 
+import main.java.br.com.bellato.dao.generics.GenericDAO;
 import main.java.br.com.bellato.domain.Client;
 
-public class ClientDAO implements IClientDAO {
+public class ClientDAO extends GenericDAO<Client> implements IClientDAO {
 
-    @Override
-    public Boolean save(Client client) {
-        // TODO
-        return true;
+    public ClientDAO() {
+        super();
     }
 
     @Override
-    public Client searchByCPF(Long cpf) {
-        return null;
+    public Class<Client> getClassType() {
+        return Client.class;
     }
 
     @Override
-    public void remove(Long cpf) {
-        // TODO
+    public void updateData(Client entity, Client entityRegistered) {
+
     }
+
 
 }

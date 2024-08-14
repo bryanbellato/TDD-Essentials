@@ -2,6 +2,7 @@ package test.java.br.com.bellato;
 
 import main.java.br.com.bellato.dao.IClientDAO;
 import main.java.br.com.bellato.domain.Client;
+import main.java.br.com.bellato.exception.KeyTypeNotFoundException;
 import main.java.br.com.bellato.services.ClientService;
 import main.java.br.com.bellato.services.IClientService;
 import org.junit.Before;
@@ -37,13 +38,13 @@ public class ClientServiceTest {
     }
 
     @Test
-    public void saveClient() {
+    public void saveClient() throws KeyTypeNotFoundException {
         Boolean save_return = clientService.save(client);
         Assert.assertTrue(save_return);
     }
 
     @Test
-    public void updateClient() {
+    public void updateClient() throws KeyTypeNotFoundException {
         client.setName("Ciclano");
         clientService.update(client);
 

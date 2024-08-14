@@ -17,7 +17,7 @@ public class SingletonMap {
      * Contains all the apllication registrations.
      * It simulates the database.
      */
-    protected Map<Class, Map<Long, ?>> map;
+    protected Map<Class, Map<?, ?>> map;
 
     private SingletonMap() {
         map = new HashMap<>();
@@ -35,7 +35,7 @@ public class SingletonMap {
         return singletonMap;
     }
 
-    public Map<Class, Map<Long, ?>> getMap() {
+    public Map<Class, Map<?, ?>> getMap() {
         return this.map;
     }
 }

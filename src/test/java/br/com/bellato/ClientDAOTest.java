@@ -2,6 +2,7 @@ package test.java.br.com.bellato;
 
 import main.java.br.com.bellato.dao.IClientDAO;
 import main.java.br.com.bellato.domain.Client;
+import main.java.br.com.bellato.exception.KeyTypeNotFoundException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +19,7 @@ public class ClientDAOTest {
     }
 
     @Before
-    public void init() {
+    public void init() throws KeyTypeNotFoundException {
         client = new Client();
         client.setCpf(123456789L);
         client.setName("Fulano");
@@ -27,18 +28,18 @@ public class ClientDAOTest {
         client.setState("Somewhere in your nearest galaxy.");
         client.setPhone(40028922L);
 
-        clientDAO.save(client);
+        clientDAO.register(client);
     }
 
     @Test
     public void searchClient() {
-        Client clientSearched = clientDAO.searchByCPF(client.getCpf());
+        Client clientSearched = clientDAO.search(client.getCpf());
         Assert.assertNotNull(clientSearched);
     }
 
     @Test
-    public void saveClient() {
-        Boolean save_return = clientDAO.save(client);
+    public void saveClient() throws KeyTypeNotFoundException {
+        Boolean save_return = clientDAO.register(client);
         Assert.assertTrue(save_return);
     }
 
@@ -46,5 +47,14 @@ public class ClientDAOTest {
     public void removeClient() {
         clientDAO.remove(client.getCpf());
     }
+
+    @Test
+    public void updateClient() throws KeyTypeNotFoundException {
+        client.setName("Beltrano");
+        clientDAO.update(client);
+
+        Assert.assertEquals("Beltrano", client.getName());;
+    }
+
 
 }

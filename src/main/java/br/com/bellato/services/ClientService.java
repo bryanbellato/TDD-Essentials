@@ -2,6 +2,7 @@ package main.java.br.com.bellato.services;
 import main.java.br.com.bellato.dao.ClientDAO;
 import main.java.br.com.bellato.dao.IClientDAO;
 import main.java.br.com.bellato.domain.Client;
+import main.java.br.com.bellato.exception.KeyTypeNotFoundException;
 
 public class ClientService implements IClientService {
 
@@ -12,23 +13,23 @@ public class ClientService implements IClientService {
     }
 
     @Override
-    public Boolean save(Client client) {
-        return clientDAO.save(client);
+    public Boolean save(Client client) throws KeyTypeNotFoundException {
+        return clientDAO.register(client);
     }
 
     @Override
     public Client searchByCPF(Long cpf) {
-        return clientDAO.searchByCPF(cpf);
+        return clientDAO.search(cpf);
     }
 
     @Override
     public void remove(Long cpf) {
-        // TODO
+        clientDAO.remove(cpf);
     }
 
     @Override
-    public void update(Client client) {
-        // TODO
+    public void update(Client client) throws KeyTypeNotFoundException {
+        clientDAO.update(client);
     }
 
 }

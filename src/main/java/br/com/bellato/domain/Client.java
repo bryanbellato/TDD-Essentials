@@ -1,6 +1,6 @@
 package main.java.br.com.bellato.domain;
 
-public class Client {
+public class Client implements Persistent {
 
     private Long cpf;
     private String name;
